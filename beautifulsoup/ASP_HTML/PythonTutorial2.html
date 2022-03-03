@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Python Getting Started</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C++, jQuery, Bootstrap, C#, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website" name="Keywords"/>
+<meta content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more." name="Description"/>
+<meta content="https://www.w3schools.com/images/w3schools_logo_436_2.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="436" property="og:image:width"/>
+<meta content="228" property="og:image:height"/>
+<meta content="W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more." property="og:description"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link as="font" crossorigin="" href="/lib/fonts/fontawesome.woff2?14663396" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-code-pro-v14-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/roboto-mono-v13-latin-500.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-600.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/freckle-face-v9-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link href="/lib/w3schools30.css" rel="stylesheet"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'GTM-WJ88MZ5');
+ga('send', 'pageview');
+</script>
+<script src="/lib/uic.js?v=1.0.3"></script>
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+
+k42 = true;
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+
+      "activeAdUnits": ["main_leaderboard", "sidebar_top", "bottom_left", "bottom_right"]
+
+  }
+}
+uic_r_a()
+</script>
+<script async="" data-cfasync="false" src="https://cdn.snigelweb.com/adengine/w3schools.com/loader.js" type="text/javascript"></script>
+<script src="/lib/my-learning.js?v=1.0.7"></script>
+<script type="text/javascript">
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+</head>
+<body>
+<style>
+#darkmodemenu {
+  position:absolute;
+  top:-40px;
+  right:16px;
+  padding:5px 20px 10px 18px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  z-index:-1;
+  transition: top 0.2s;
+  user-select: none;
+}
+#darkmodemenu input,#darkmodemenu label {
+  cursor:pointer;
+}
+</style>
+<script>
+(
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.body.className += " darktheme";
+    ga('send', 'event', 'theme' , "darkcode");    
+  }
+  if (y == "dark") {
+    document.body.className += " darkpagetheme";
+    ga('send', 'event', 'theme' , "darkpage");
+  }
+})();
+</script>
+
+
+
+
+
+<script>
+(
+function setThemeCheckboxes() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.getElementById("radio_darkcode").checked = true;
+    
+  }
+  if (y == "dark") {
+    document.getElementById("radio_darkpage").checked = true;
+  }
+})();
+
+function mouseoverdarkicon() {
+  if(window.matchMedia("(pointer: coarse)").matches) {
+    return false;
+  }
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "44px";
+}
+function mouseoutofdarkicon() {
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "-40px";
+}
+function changepagetheme(n) {
+  var a = document.getElementById("radio_darkcode");
+  var b = document.getElementById("radio_darkpage");
+  document.body.className = document.body.className.replace("darktheme", "");
+  document.body.className = document.body.className.replace("darkpagetheme", "");    
+  document.body.className = document.body.className.replace("  ", " ");
+  if (a.checked && b.checked) {
+    localStorage.setItem("preferredmode", "light");
+    localStorage.setItem("preferredpagemode", "light");
+    a.checked = false;
+    b.checked = false;    
+  } else {
+    document.body.className += " darktheme";
+    document.body.className += " darkpagetheme";  
+    localStorage.setItem("preferredmode", "dark");
+    localStorage.setItem("preferredpagemode", "dark");
+    a.checked = true;
+    b.checked = true;    
+  }
+}
+
+
+function click_darkpage() {
+  var b = document.getElementById("radio_darkpage");
+  if (b.checked) {
+    document.body.className += " darkpagetheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darkpagetheme", "");
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "light");
+  }
+}
+
+function click_darkcode() {
+  var a = document.getElementById("radio_darkcode");
+  if (a.checked) {
+    document.body.className += " darktheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredmode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darktheme", "");
+    document.body.className = document.body.className.replace("  ", " ");
+    localStorage.setItem("preferredmode", "light");
+  }
+}
+
+</script>
+
+<div class="w3-main w3-light-grey" id="belowtopnav" style="margin-left:220px;">
+<div class="w3-row w3-white">
+<div class="w3-col l10 m12" id="main">
+
+<h1>Python <span class="color_h1">Getting Started</span></h1>
+
+<hr/>
+<h2>Python Install</h2>
+<p>Many PCs and Macs will have python already installed.</p>
+<p>To check if you have python installed on a Windows PC, search in the start bar for Python or run the following on the Command Line (cmd.exe):</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;python --version
+</div>
+</div>
+<p>To check if you have python installed on a Linux or Mac, then on linux open the command line or on Mac open the Terminal and type:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+python --version
+</div>
+</div>
+<p>If you find that you do not have Python installed on your computer, then you can download it for free from the following website: <a href="https://www.python.org/" target="_blank">https://www.python.org/</a></p>
+<hr/>
+<h2>Python Quickstart</h2>
+<p>Python is an interpreted programming language, this means that as a developer you write Python (.py) files in a text editor and then put those files into the python interpreter to be executed.</p>
+<p>The way to run a python file is like this on the command line:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;python helloworld.py
+</div>
+</div>
+<p>Where "helloworld.py" is the name of your python file.</p>
+<p>Let's write our first Python file, called helloworld.py, which can be done in any text editor.</p>
+<div class="w3-example">
+<p>helloworld.py</p>
+<div class="w3-code notranslate pythonHigh">
+print("Hello, World!")
+</div>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_helloworld" target="_blank">Try it Yourself »</a>
+</div>
+<p>Simple as that. Save your file. Open your command line, navigate to the directory where you saved your file, and run:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;python helloworld.py
+</div>
+</div>
+<p>The output should read:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+Hello, World!
+</div>
+</div>
+<p>Congratulations, you have written and executed your first Python program.</p>
+<hr/>
+
+<hr/>
+<h2>The Python Command Line</h2>
+<p>To test a short amount of code in python sometimes it is quickest and easiest not to write the code in a file. This is made possible because Python can be run as a command line itself.</p>
+<p>Type the following on the Windows, Mac or Linux command line:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;python
+</div>
+</div>
+
+Or, if the "python" command did not work, you can try "py":
+
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+C:\Users\<em>Your Name</em>&gt;py
+</div>
+</div>
+<p>From there you can write any python, including our hello world example from earlier in the tutorial:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+<span style="opacity:0.5">C:\Users\<em>Your Name</em>&gt;python<br/>
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32<br/>
+Type "help", "copyright", "credits" or "license" for more information.</span><br/>
+&gt;&gt;&gt; print("Hello, World!")
+</div>
+</div>
+<p>Which will write "Hello, World!" in the command line:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+<span style="opacity:0.5">C:\Users\<em>Your Name</em>&gt;python<br/>
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:04:45) [MSC v.1900 32 bit (Intel)] on win32<br/>
+Type "help", "copyright", "credits" or "license" for more information.<br/>
+&gt;&gt;&gt; print("Hello, World!")</span><br/>
+Hello, World!
+</div>
+</div>
+<p>Whenever you are done in the python command line, you can simply type the following to quit the python command line interface:</p>
+<div class="w3-example">
+<div class="w3-code notranslate w3-black">
+exit()
+</div>
+</div>
+<br/>
+
+<div id="mypagediv2" style="position:relative;text-align:center;"></div>
+<br/>
+</div>
+
+</div>
+
+</div>
+<script src="/lib/w3schools_footer.js?update=20220202"></script>
+<script>
+  MyLearning.loadUser('footer');
+  function docReady(fn) {
+    document.addEventListener("DOMContentLoaded", fn);
+    if (document.readyState === "interactive" || document.readyState === "complete" ) {
+      fn();
+    }
+  }
+  uic_r_z();
+  uic_r_d()
+</script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</body>
+</html>

@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Matplotlib Scatter</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C++, jQuery, Bootstrap, C#, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website" name="Keywords"/>
+<meta content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more." name="Description"/>
+<meta content="https://www.w3schools.com/images/w3schools_logo_436_2.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="436" property="og:image:width"/>
+<meta content="228" property="og:image:height"/>
+<meta content="W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more." property="og:description"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link as="font" crossorigin="" href="/lib/fonts/fontawesome.woff2?14663396" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-code-pro-v14-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/roboto-mono-v13-latin-500.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-600.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/freckle-face-v9-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link href="/lib/w3schools30.css" rel="stylesheet"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'GTM-WJ88MZ5');
+ga('send', 'pageview');
+</script>
+<script src="/lib/uic.js?v=1.0.3"></script>
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+
+k42 = true;
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+
+      "activeAdUnits": ["main_leaderboard", "sidebar_top", "bottom_left", "bottom_right"]
+
+  }
+}
+uic_r_a()
+</script>
+<script async="" data-cfasync="false" src="https://cdn.snigelweb.com/adengine/w3schools.com/loader.js" type="text/javascript"></script>
+<script src="/lib/my-learning.js?v=1.0.7"></script>
+<script type="text/javascript">
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+</head>
+<body>
+<style>
+#darkmodemenu {
+  position:absolute;
+  top:-40px;
+  right:16px;
+  padding:5px 20px 10px 18px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  z-index:-1;
+  transition: top 0.2s;
+  user-select: none;
+}
+#darkmodemenu input,#darkmodemenu label {
+  cursor:pointer;
+}
+</style>
+<script>
+(
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.body.className += " darktheme";
+    ga('send', 'event', 'theme' , "darkcode");    
+  }
+  if (y == "dark") {
+    document.body.className += " darkpagetheme";
+    ga('send', 'event', 'theme' , "darkpage");
+  }
+})();
+</script>
+
+
+
+
+
+<script>
+(
+function setThemeCheckboxes() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.getElementById("radio_darkcode").checked = true;
+    
+  }
+  if (y == "dark") {
+    document.getElementById("radio_darkpage").checked = true;
+  }
+})();
+
+function mouseoverdarkicon() {
+  if(window.matchMedia("(pointer: coarse)").matches) {
+    return false;
+  }
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "44px";
+}
+function mouseoutofdarkicon() {
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "-40px";
+}
+function changepagetheme(n) {
+  var a = document.getElementById("radio_darkcode");
+  var b = document.getElementById("radio_darkpage");
+  document.body.className = document.body.className.replace("darktheme", "");
+  document.body.className = document.body.className.replace("darkpagetheme", "");    
+  document.body.className = document.body.className.replace("  ", " ");
+  if (a.checked && b.checked) {
+    localStorage.setItem("preferredmode", "light");
+    localStorage.setItem("preferredpagemode", "light");
+    a.checked = false;
+    b.checked = false;    
+  } else {
+    document.body.className += " darktheme";
+    document.body.className += " darkpagetheme";  
+    localStorage.setItem("preferredmode", "dark");
+    localStorage.setItem("preferredpagemode", "dark");
+    a.checked = true;
+    b.checked = true;    
+  }
+}
+
+
+function click_darkpage() {
+  var b = document.getElementById("radio_darkpage");
+  if (b.checked) {
+    document.body.className += " darkpagetheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darkpagetheme", "");
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "light");
+  }
+}
+
+function click_darkcode() {
+  var a = document.getElementById("radio_darkcode");
+  if (a.checked) {
+    document.body.className += " darktheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredmode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darktheme", "");
+    document.body.className = document.body.className.replace("  ", " ");
+    localStorage.setItem("preferredmode", "light");
+  }
+}
+
+</script>
+
+<div class="w3-main w3-light-grey" id="belowtopnav" style="margin-left:220px;">
+<div class="w3-row w3-white">
+<div class="w3-col l10 m12" id="main">
+
+<h1>Matplotlib <span class="color_h1">Scatter</span></h1>
+
+<hr/>
+<h2>Creating Scatter Plots</h2>
+<p>With Pyplot, you can use the <code class="w3-codespan">scatter()</code> function 
+to draw a scatter plot.</p>
+<p>The <code class="w3-codespan">scatter()</code> function plots one dot for 
+each observation. It needs two arrays of the same length, one for the values of 
+the x-axis, and one for values on the y-axis:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>A simple scatter plot:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/><br/>plt.scatter(x, y)<br/>plt.show()
+</div>
+<h3>Result:</h3>
+<p><img src="img_matplotlib_scatter.png" style="max-width:100%"/></p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter" target="_blank">Try it Yourself »</a>
+</div>
+<p>The observation in the example above is the result of 13 cars passing by.</p>
+<p>The X-axis shows how old the car is.</p>
+<p>The Y-axis shows the speed of the car when it passes.</p>
+<p>Are there any relationships between the observations?</p>
+<p>It seems that the newer the car, the faster it drives, but that could be a coincidence, after all we only registered 13 cars.</p>
+<hr/>
+<h2>Compare Plots</h2>
+<p>In the example above, there seems to be a relationship between speed and age,
+but what if we plot the observations from another day as well?
+Will the scatter plot tell us something else?</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Draw two plots on the same figure:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>#day one, the age 
+  and speed of 13 cars:<br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>plt.scatter(x, 
+  y)<br/><br/>#day two, the age and speed of 15 cars:<br/>x = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])<br/>y = np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])<br/>
+  plt.scatter(x, y)<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p><img src="img_matplotlib_scatter_compare.png" style="max-width:100%"/></p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_compare" target="_blank">Try it Yourself »</a>
+</div>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> The two plots are plotted with two different colors, by default blue and orange, you will learn how to change colors later in this chapter.</p>
+</div>
+<p>By comparing the two plots, I think it is safe to say that they both gives us the same conclusion: the newer the car, the faster it drives.</p>
+<hr/>
+
+<hr/>
+<h2>Colors</h2>
+<p>You can set your own color for each scatter plot with the
+<code class="w3-codespan">color</code> or the <code class="w3-codespan">c</code> 
+argument:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Set your own color of the markers:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>plt.scatter(x, 
+  y, color = 'hotpink')<br/><br/>x = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])<br/>y = np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])<br/>
+  plt.scatter(x, y, color = '#88c999')<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_color.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_color" target="_blank">Try it Yourself »</a>
+</div>
+<hr/>
+<h2>Color Each Dot</h2>
+<p>You can even set a specific color for each dot by using an array of colors as value for the
+<code class="w3-codespan">c</code> argument:</p>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong> You <em>cannot</em> use the <code class="w3-codespan">color</code> argument for this, only the <code class="w3-codespan">c</code> argument.</p>
+</div>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Set your own color of the markers:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>colors = np.array(["red","green","blue","yellow","pink","black","orange","purple","beige","brown","gray","cyan","magenta"])<br/>
+<br/>plt.scatter(x, y, c=colors)<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_colors2.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_c" target="_blank">Try it Yourself »</a>
+</div>
+<hr/>
+<h2>ColorMap</h2>
+<p>The Matplotlib module has a number of available colormaps.</p>
+<p>A colormap is like a list of colors, where each color has a value that ranges 
+from 0 to 100.</p>
+<p>Here is an example of a colormap:</p>
+<p>
+<img src="img_colorbar.png" style="max-width:100%"/>
+</p>
+<p>This colormap is called 'viridis' and as you can see it ranges from 0, which 
+is a purple color, and up to 100, which is a yellow color.</p>
+<h3>How to Use the ColorMap</h3>
+<p>You can specify the colormap with the keyword argument
+<code class="w3-codespan">cmap</code> with the value of the colormap, in this 
+case <code class="w3-codespan">'viridis'</code> which is one of the 
+built-in colormaps available in Matplotlib.</p>
+<p>In addition you have to create an array with values (from 0 to 100), one value for each of 
+the point in the scatter plot:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create a color array, and specify a colormap in the scatter plot:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>colors = np.array([0, 
+  10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100])<br/>
+<br/>plt.scatter(x, y, c=colors, cmap='viridis')<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_colormap1.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_cmap" target="_blank">Try it Yourself »</a>
+</div>
+<p>You can include the colormap in the drawing by including the <code class="w3-codespan">plt.colorbar()</code> statement:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Include the actual colormap:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>colors = np.array([0, 
+  10, 20, 30, 40, 45, 50, 55, 60, 70, 80, 90, 100])<br/>
+<br/>plt.scatter(x, y, c=colors, cmap='viridis')<br/><br/>plt.colorbar()<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_colormap2.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_cmap2" target="_blank">Try it Yourself »</a>
+</div>
+<h3>Available ColorMaps</h3>
+<p>You can choose any of the built-in colormaps:</p>
+<table class="ws-table-all notranslate">
+<tbody>
+<tr>
+<th>Name</th>
+<th></th>
+<th> </th>
+<th>Reverse</th>
+<th></th>
+</tr>
+<tr>
+<td>Accent</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Accent" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Accent_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Accent_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Blues</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Blues" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Blues_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Blues_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>BrBG</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BrBG" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>BrBG_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BrBG_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>BuGn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BuGn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>BuGn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BuGn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>BuPu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BuPu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>BuPu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_BuPu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>CMRmap</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_CMRmap" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>CMRmap_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_CMRmap_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Dark2</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Dark2" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Dark2_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Dark2_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>GnBu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_GnBu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>GnBu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_GnBu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Greens</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Greens" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Greens_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Greens_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Greys</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Greys" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Greys_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Greys_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>OrRd</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_OrRd" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>OrRd_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_OrRd_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Oranges</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Oranges" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Oranges_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Oranges_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PRGn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PRGn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PRGn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PRGn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Paired</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Paired" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Paired_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Paired_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Pastel1</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Pastel1" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Pastel1_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Pastel1_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Pastel2</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Pastel2" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Pastel2_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Pastel2_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PiYG</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PiYG" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PiYG_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PiYG_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PuBu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuBu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PuBu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuBu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PuBuGn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuBuGn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PuBuGn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuBuGn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PuOr</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuOr" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PuOr_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuOr_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>PuRd</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuRd" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>PuRd_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_PuRd_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Purples</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Purples" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Purples_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Purples_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>RdBu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdBu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>RdBu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdBu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>RdGy</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdGy" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>RdGy_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdGy_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>RdPu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdPu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>RdPu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdPu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>RdYlBu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdYlBu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>RdYlBu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdYlBu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>RdYlGn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdYlGn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>RdYlGn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_RdYlGn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Reds</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Reds" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Reds_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Reds_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Set1</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set1" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Set1_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set1_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Set2</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set2" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Set2_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set2_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Set3</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set3" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Set3_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Set3_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Spectral</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Spectral" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Spectral_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Spectral_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>Wistia</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Wistia" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>Wistia_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_Wistia_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>YlGn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlGn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>YlGn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlGn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>YlGnBu</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlGnBu" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>YlGnBu_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlGnBu_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>YlOrBr</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlOrBr" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>YlOrBr_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlOrBr_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>YlOrRd</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlOrRd" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>YlOrRd_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_YlOrRd_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>afmhot</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_afmhot" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>afmhot_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_afmhot_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>autumn</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_autumn" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>autumn_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_autumn_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>binary</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_binary" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>binary_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_binary_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>bone</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_bone" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>bone_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_bone_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>brg</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_brg" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>brg_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_brg_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>bwr</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_bwr" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>bwr_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_bwr_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>cividis</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cividis" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>cividis_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cividis_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>cool</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cool" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>cool_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cool_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>coolwarm</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_coolwarm" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>coolwarm_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_coolwarm_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>copper</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_copper" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>copper_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_copper_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>cubehelix</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cubehelix" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>cubehelix_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_cubehelix_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>flag</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_flag" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>flag_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_flag_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_earth</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_earth" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_earth_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_earth_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_gray</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_gray" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_gray_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_gray_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_heat</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_heat" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_heat_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_heat_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_ncar</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_ncar" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_ncar_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_ncar_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_rainbow</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_rainbow" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_rainbow_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_rainbow_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_stern</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_stern" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_stern_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_stern_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gist_yarg</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_yarg" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gist_yarg_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gist_yarg_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gnuplot</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gnuplot" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gnuplot_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gnuplot_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gnuplot2</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gnuplot2" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gnuplot2_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gnuplot2_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>gray</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gray" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>gray_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_gray_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>hot</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_hot" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>hot_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_hot_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>hsv</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_hsv" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>hsv_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_hsv_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>inferno</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_inferno" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>inferno_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_inferno_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>jet</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_jet" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>jet_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_jet_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>magma</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_magma" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>magma_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_magma_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>nipy_spectral</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_nipy_spectral" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>nipy_spectral_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_nipy_spectral_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>ocean</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_ocean" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>ocean_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_ocean_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>pink</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_pink" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>pink_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_pink_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>plasma</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_plasma" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>plasma_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_plasma_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>prism</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_prism" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>prism_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_prism_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>rainbow</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_rainbow" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>rainbow_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_rainbow_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>seismic</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_seismic" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>seismic_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_seismic_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>spring</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_spring" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>spring_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_spring_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>summer</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_summer" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>summer_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_summer_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>tab10</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab10" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>tab10_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab10_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>tab20</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>tab20_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>tab20b</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20b" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>tab20b_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20b_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>tab20c</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20c" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>tab20c_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_tab20c_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>terrain</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_terrain" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>terrain_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_terrain_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>twilight</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_twilight" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>twilight_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_twilight_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>twilight_shifted</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_twilight_shifted" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>twilight_shifted_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_twilight_shifted_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>viridis</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_viridis" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>viridis_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_viridis_r" target="_blank">Try it  »</a></td>
+</tr>
+<tr>
+<td>winter</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_winter" target="_blank">Try it  »</a></td>
+<td> </td>
+<td>winter_r</td>
+<td><a class="w3-btn btnsmall btnsmall" href="trypython.asp?filename=demo_matplotlib_scatter_cmap_winter_r" target="_blank">Try it  »</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2>Size</h2>
+<p>You can change the size of the dots with the 
+<code class="w3-codespan">s</code> argument.</p>
+<p>Just like colors, make sure the array for sizes has the same length as the arrays for the x- and y-axis:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Set your own size for the markers:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>sizes = 
+  np.array([20,50,100,200,500,1000,60,90,10,300,600,800,75])<br/><br/>plt.scatter(x, 
+  y, s=sizes)<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_size.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_size" target="_blank">Try it Yourself »</a>
+</div>
+<hr/>
+<h2>Alpha</h2>
+<p>You can adjust the transparency of the dots with the 
+<code class="w3-codespan">alpha</code> argument.</p>
+<p>Just like colors, make sure the array for sizes has the same length as the arrays for the x- and y-axis:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Set your own size for the markers:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])<br/>
+  y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])<br/>sizes = 
+  np.array([20,50,100,200,500,1000,60,90,10,300,600,800,75])<br/><br/>plt.scatter(x, 
+  y, s=sizes, alpha=0.5)<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_alpha.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_alpha" target="_blank">Try it Yourself »</a>
+</div>
+<hr/>
+<h2>Combine Color Size and Alpha</h2>
+<p>You can combine a colormap with different sizes on the dots. This is best visualized if the dots are transparent:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<p>Create random arrays with 100 values for x-points, y-points, colors and 
+sizes:</p>
+<div class="w3-code notranslate pythonHigh">
+  import matplotlib.pyplot as plt<br/>import numpy as np<br/><br/>x = 
+  np.random.randint(100, size=(100))<br/>y = np.random.randint(100, size=(100))<br/>
+  colors = np.random.randint(100, size=(100))<br/>sizes = 10 * np.random.randint(100, 
+  size=(100))<br/><br/>plt.scatter(x, y, c=colors, s=sizes, alpha=0.5, cmap='nipy_spectral')<br/>
+<br/>plt.colorbar()<br/><br/>plt.show()</div>
+<h3>Result:</h3>
+<p>
+<img src="img_matplotlib_scatter_combine.png" style="max-width:100%"/>
+</p>
+<a class="w3-btn w3-margin-bottom" href="trypython.asp?filename=demo_matplotlib_scatter_combine" target="_blank">Try it Yourself »</a>
+</div>
+<hr/>
+
+<div id="mypagediv2" style="position:relative;text-align:center;"></div>
+<br/>
+</div>
+
+</div>
+
+</div>
+<script src="/lib/w3schools_footer.js?update=20220202"></script>
+<script>
+  MyLearning.loadUser('footer');
+  function docReady(fn) {
+    document.addEventListener("DOMContentLoaded", fn);
+    if (document.readyState === "interactive" || document.readyState === "complete" ) {
+      fn();
+    }
+  }
+  uic_r_z();
+  uic_r_d()
+</script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</body>
+</html>

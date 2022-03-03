@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Python Machine Learning</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C++, jQuery, Bootstrap, C#, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website" name="Keywords"/>
+<meta content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more." name="Description"/>
+<meta content="https://www.w3schools.com/images/w3schools_logo_436_2.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="436" property="og:image:width"/>
+<meta content="228" property="og:image:height"/>
+<meta content="W3Schools offers free online tutorials, references and exercises in all the major languages of the web. Covering popular subjects like HTML, CSS, JavaScript, Python, SQL, Java, and many, many more." property="og:description"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link as="font" crossorigin="" href="/lib/fonts/fontawesome.woff2?14663396" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-code-pro-v14-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/roboto-mono-v13-latin-500.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-700.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/source-sans-pro-v14-latin-600.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/lib/fonts/freckle-face-v9-latin-regular.woff2" rel="preload" type="font/woff2"/>
+<link href="/lib/w3schools30.css" rel="stylesheet"/>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'GTM-WJ88MZ5');
+ga('send', 'pageview');
+</script>
+<script src="/lib/uic.js?v=1.0.3"></script>
+<script data-cfasync="false" type="text/javascript">
+var k42 = false;
+
+k42 = true;
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    window.snigelPubConf = {
+    "adengine": {
+
+      "activeAdUnits": ["main_leaderboard", "sidebar_top", "bottom_left", "bottom_right"]
+
+  }
+}
+uic_r_a()
+</script>
+<script async="" data-cfasync="false" src="https://cdn.snigelweb.com/adengine/w3schools.com/loader.js" type="text/javascript"></script>
+<script src="/lib/my-learning.js?v=1.0.7"></script>
+<script type="text/javascript">
+var stickyadstatus = "";
+function fix_stickyad() {
+  document.getElementById("stickypos").style.position = "sticky";
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+      document.getElementById("stickypos").style.position = "sticky";
+
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+      document.getElementById("stickypos").style.position = "static";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+      document.getElementById("stickypos").style.position = "static";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+        document.getElementById("stickypos").style.position = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+<style type="text/css">
+td.auto-style1 {
+  text-align: right;
+}
+td.auto-style2 {
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<style>
+#darkmodemenu {
+  position:absolute;
+  top:-40px;
+  right:16px;
+  padding:5px 20px 10px 18px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  z-index:-1;
+  transition: top 0.2s;
+  user-select: none;
+}
+#darkmodemenu input,#darkmodemenu label {
+  cursor:pointer;
+}
+</style>
+<script>
+(
+function setThemeMode() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.body.className += " darktheme";
+    ga('send', 'event', 'theme' , "darkcode");    
+  }
+  if (y == "dark") {
+    document.body.className += " darkpagetheme";
+    ga('send', 'event', 'theme' , "darkpage");
+  }
+})();
+</script>
+
+
+
+
+
+<script>
+(
+function setThemeCheckboxes() {
+  var x = localStorage.getItem("preferredmode");
+  var y = localStorage.getItem("preferredpagemode");  
+  if (x == "dark") {
+    document.getElementById("radio_darkcode").checked = true;
+    
+  }
+  if (y == "dark") {
+    document.getElementById("radio_darkpage").checked = true;
+  }
+})();
+
+function mouseoverdarkicon() {
+  if(window.matchMedia("(pointer: coarse)").matches) {
+    return false;
+  }
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "44px";
+}
+function mouseoutofdarkicon() {
+  var a = document.getElementById("darkmodemenu");
+  a.style.top = "-40px";
+}
+function changepagetheme(n) {
+  var a = document.getElementById("radio_darkcode");
+  var b = document.getElementById("radio_darkpage");
+  document.body.className = document.body.className.replace("darktheme", "");
+  document.body.className = document.body.className.replace("darkpagetheme", "");    
+  document.body.className = document.body.className.replace("  ", " ");
+  if (a.checked && b.checked) {
+    localStorage.setItem("preferredmode", "light");
+    localStorage.setItem("preferredpagemode", "light");
+    a.checked = false;
+    b.checked = false;    
+  } else {
+    document.body.className += " darktheme";
+    document.body.className += " darkpagetheme";  
+    localStorage.setItem("preferredmode", "dark");
+    localStorage.setItem("preferredpagemode", "dark");
+    a.checked = true;
+    b.checked = true;    
+  }
+}
+
+
+function click_darkpage() {
+  var b = document.getElementById("radio_darkpage");
+  if (b.checked) {
+    document.body.className += " darkpagetheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darkpagetheme", "");
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredpagemode", "light");
+  }
+}
+
+function click_darkcode() {
+  var a = document.getElementById("radio_darkcode");
+  if (a.checked) {
+    document.body.className += " darktheme";
+    document.body.className = document.body.className.replace("  ", " ");    
+    localStorage.setItem("preferredmode", "dark");
+  } else {
+    document.body.className = document.body.className.replace("darktheme", "");
+    document.body.className = document.body.className.replace("  ", " ");
+    localStorage.setItem("preferredmode", "light");
+  }
+}
+
+</script>
+
+<div class="w3-main w3-light-grey" id="belowtopnav" style="margin-left:220px;">
+<div class="w3-row w3-white">
+<div class="w3-col l10 m12" id="main">
+
+<h1>Machine Learning</h1>
+
+<div class="w3-panel w3-info intro">
+<p>Machine Learning is making the computer learn from studying data and statistics.</p>
+<p>Machine Learning is a step into the direction of artificial intelligence (AI).</p>
+<p>Machine Learning is a program that analyses data and learns to predict the 
+outcome.</p>
+</div>
+<h2>Where To Start?</h2>
+<p>In this tutorial we will go back to mathematics and study statistics, and how to calculate 
+important numbers based on data sets.</p>
+<p>We will also learn how to use various Python modules to get the answers we 
+need.</p>
+<p>And we will learn how to make functions that are able to predict the outcome 
+based on what we have learned.</p>
+<hr/>
+<h2>Data Set</h2>
+<p>In the mind of a computer, a data set is any collection of data.
+It can be anything from an array to a complete database.</p>
+<p>Example of an array:</p>
+<div class="w3-example w3-light-grey">
+<p><code class="pythonHigh">[99,86,87,88,111,86,103,87,94,78,77,85,86]</code></p>
+</div>
+<p>Example of a database:</p>
+<table class="ws-table-all">
+<tr>
+<td>Carname</td><td>Color</td><td class="auto-style1">Age</td><td class="auto-style1">Speed</td><td class="auto-style2">AutoPass</td>
+</tr>
+<tr>
+<td>BMW</td><td>red</td><td class="auto-style1">5</td><td class="auto-style1">99</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>Volvo</td><td>black</td><td class="auto-style1">7</td><td class="auto-style1">86</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>VW</td><td>gray</td><td class="auto-style1">8</td><td class="auto-style1">87</td><td class="auto-style2">N</td>
+</tr>
+<tr>
+<td>VW</td><td>white</td><td class="auto-style1">7</td><td class="auto-style1">88</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>Ford</td><td>white</td><td class="auto-style1">2</td><td class="auto-style1">111</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>VW</td><td>white</td><td class="auto-style1">17</td><td class="auto-style1">86</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>Tesla</td><td>red</td><td class="auto-style1">2</td><td class="auto-style1">103</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>BMW</td><td>black</td><td class="auto-style1">9</td><td class="auto-style1">87</td><td class="auto-style2">Y</td>
+</tr>
+<tr>
+<td>Volvo</td><td>gray</td><td class="auto-style1">4</td><td class="auto-style1">94</td><td class="auto-style2">N</td>
+</tr>
+<tr>
+<td>Ford</td><td>white</td><td class="auto-style1">11</td><td class="auto-style1">78</td><td class="auto-style2">N</td>
+</tr>
+<tr>
+<td>Toyota</td><td>gray</td><td class="auto-style1">12</td><td class="auto-style1">77</td><td class="auto-style2">N</td>
+</tr>
+<tr>
+<td>VW</td><td>white</td><td class="auto-style1">9</td><td class="auto-style1">85</td><td class="auto-style2">N</td>
+</tr>
+<tr>
+<td>Toyota</td><td>blue</td><td class="auto-style1">6</td><td class="auto-style1">86</td><td class="auto-style2">Y</td>
+</tr>
+</table>
+<p>By looking at the array, we can guess that the average value is probably around 80 
+or 90, and we are also able to determine the highest value and the lowest value, but what else can we do?</p>
+<p>And by looking at the database we can see that the most popular color is white, and the oldest car is 17 years,
+but what if we could predict if a car had an AutoPass, just by looking at the other values?</p>
+<p>That is what Machine Learning is for! Analyzing data and predicting the outcome!</p>
+<div class="w3-panel w3-note">
+<p>In Machine Learning it is common to work with very large data sets. In this 
+  tutorial we will try to make it as easy as possible to understand the 
+  different concepts of machine learning, and we will work with small 
+  easy-to-understand data sets.</p>
+</div>
+<hr/>
+
+<hr/>
+<h2>Data Types</h2>
+<p>To analyze data, it is important to know what type of data we are dealing with.</p>
+<p>We can split the data types into three main categories:</p>
+<ul>
+<li><strong>Numerical</strong></li>
+<li><strong>Categorical</strong></li>
+<li><strong>Ordinal</strong></li>
+</ul>
+<p><strong>Numerical</strong> data are numbers, and can be split into two 
+numerical categories:</p>
+<ul>
+<li>Discrete Data<br/>- numbers that are limited to integers. Example: The number 
+of cars passing by.</li>
+<li>Continuous Data<br/>- numbers that are of infinite value. Example: The 
+  price of an item, or the size of an item</li>
+</ul>
+<p><strong>Categorical</strong> data are values that cannot be measured up 
+against each other. Example: a color value, or any yes/no values.</p>
+<p><strong>Ordinal</strong> data are like categorical data, but can be measured 
+up against each other. Example: school grades where A is better than B and so 
+on.</p>
+<p>By knowing the data type of your data source, you will be able to know what 
+technique to use when analyzing them.</p>
+<p>You will learn more about statistics and analyzing data in the next chapters.</p>
+<hr/>
+
+<div id="mypagediv2" style="position:relative;text-align:center;"></div>
+<br/>
+</div>
+
+</div>
+
+</div>
+<script src="/lib/w3schools_footer.js?update=20220202"></script>
+<script>
+  MyLearning.loadUser('footer');
+  function docReady(fn) {
+    document.addEventListener("DOMContentLoaded", fn);
+    if (document.readyState === "interactive" || document.readyState === "complete" ) {
+      fn();
+    }
+  }
+  uic_r_z();
+  uic_r_d()
+</script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</body>
+</html>
